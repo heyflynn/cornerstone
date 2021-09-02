@@ -1,4 +1,4 @@
-import { getEnabledElement } from './enabledElements.js';
+import { getEnabledElement } from './enabledElements.js'
 
 /**
  * Retrieves any data for a Cornerstone enabledElement for a specific string
@@ -8,14 +8,14 @@ import { getEnabledElement } from './enabledElements.js';
  * @param {string} dataType A string name for an arbitrary set of data
  * @returns {*} Whatever data is stored for this enabled element
  */
-export function getElementData (element, dataType) {
-  const ee = getEnabledElement(element);
+export function getElementData(element, dataType) {
+    const ee = getEnabledElement(element)
 
-  if (ee.data.hasOwnProperty(dataType) === false) {
-    ee.data[dataType] = {};
-  }
+    if (Object.prototype.hasOwnProperty.call(ee.data, dataType) === false) {
+        ee.data[dataType] = {}
+    }
 
-  return ee.data[dataType];
+    return ee.data[dataType]
 }
 
 /**
@@ -27,8 +27,8 @@ export function getElementData (element, dataType) {
  *
  * @returns {void}
  */
-export function removeElementData (element, dataType) {
-  const ee = getEnabledElement(element);
+export function removeElementData(element, dataType) {
+    const ee = getEnabledElement(element)
 
-  delete ee.data[dataType];
+    delete ee.data[dataType]
 }
